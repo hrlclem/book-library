@@ -19,6 +19,20 @@ function addBookToLibrary(title, author, pages, read) {
 addBookToLibrary("Yes Man", "Bob Dylan", 43, true);
 addBookToLibrary("No Man", "Ron Dylan", 34, false);
 addBookToLibrary("Maybe Man", "Dan Dylan", 73, true);
-for (i = 0; i < 3; i++) {
-    console.log(myLibrary[i]);
-}
+    console.log(myLibrary);
+
+    //PSEUDOCODE
+    // DISPLAY EXISTING BOOKS
+    // Go through MyLibrary
+    // For each book, display it in grid with:
+    //      Title
+    //      Author
+    //      Nbr of pages
+    //      Read TRUE or FALSE (with button to change)
+    //      Button to delete Book. If clicked, Booked is deleted and DISPLAY EXISTING BOOKS runs
+
+    // When AddBook btn is clicked, popup appears
+    // Each field fills the BookConstructor
+
+    // When Submit is clicked, all BookConstructor data is pushed to MyLibrary
+    // Run DISPLAY EXISTING BOOKS
