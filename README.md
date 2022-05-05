@@ -1,2 +1,2 @@
 # book-library
-A Book Library to master Objects in JS
+This project is a Book Library to master Objects in JS.
