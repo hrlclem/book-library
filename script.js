@@ -13,9 +13,13 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+
 }
 
 
 addBookToLibrary("Yes Man", "Bob Dylan", 43, true);
 addBookToLibrary("No Man", "Ron Dylan", 34, false);
 addBookToLibrary("Maybe Man", "Dan Dylan", 73, true);
+for (i = 0; i < 3; i++) {
+    console.log(myLibrary[i]);
+}
