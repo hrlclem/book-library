@@ -47,7 +47,7 @@ addBookToLibrary("Maybe Man", "Dan Dylan", 73, true);
 //      Read TRUE or FALSE (with button to change)
 //      Button to delete Book. If clicked, Booked is deleted and DISPLAY EXISTING BOOKS runs
 
-// When AddBook btn is clicked, popup appears
+// When AddBook btn is clicked, modal appears
 // Each field fills the BookConstructor
 
 // When Submit is clicked, all BookConstructor data is pushed to MyLibrary
