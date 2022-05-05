@@ -11,9 +11,18 @@
     <div class="header">BOOK LIBRARY</div>
 
     <div class="addBookClass">
-        <button class="addBookBtn" onclick="addBooktoLib()">Add your book</button>
+        <button class="addBookBtn" onclick="TODO">Add your book</button>
     </div>
     <div class="library"></div>
+    <div class="modal">
+        <span class="titleModal">Add new Book</span>
+        <input class="titleInput" id="titleInput" placeholder="Title">
+        <input class="authorInput" id="authorInput" placeholder="Author">
+        <input class="pagesInput" id="pagesInput" placeholder="Pages" type="number">
+        <span class="readQuestion">Have you read it?</span>
+        <input class="TrFaRead" id="TrFaRead" type="checkbox">
+        <button class="submitBtn" onclick="addBooktoLib()">Submit</button>
+    </div>
     <div class="footer"> Clément Hurel © All rights reserved, 2022</div>
     <script src="script.js"></script>
 </body>

@@ -4,6 +4,9 @@
     word-break:break-all;
 }
 
+
+
+/* HEADER */
 .header{
     display:flex;
     padding-left:10%;
@@ -14,6 +17,10 @@
     font-weight: bold;
 }
 
+
+
+
+/* LIBRARY */
 .addBookClass{
     display:flex;
     margin-top: 40px;    
@@ -49,6 +56,53 @@
     background-color: red;
 }
 
+
+
+
+/* MODAL */
+.modal {
+    display: block;
+    font-family: arial;
+    color: #212121;
+    bottom: 0;
+    background-color: rgb(240, 238, 238);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    justify-items: center;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+  }
+
+.modal > * {
+    display: block;
+    justify-items: center;
+    margin: 10px;
+    width: auto;
+}
+
+.readQuestion, .TrFaRead{
+    display:inline-block;
+    justify-items: center;
+    text-align: center;
+    font-size: 10px;
+}
+
+.submitBtn{
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    background-color: green;
+}
+
+
+
+
+/* FOOTER */
 .footer {
     font-family: arial;
     color: #212121;
