@@ -4,6 +4,36 @@
     word-break:break-all;
 }
 
+.header{
+    display:flex;
+    padding-left:10%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid black;
+    font-size: 2em;
+}
+
+.addBookClass{
+    display:flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBookBtn{
+    padding-left:40px;
+    padding-right:40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.library{
+    display:grid;
+}
+
 .footer {
     font-family: arial;
     color: #212121;
