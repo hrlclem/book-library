@@ -81,7 +81,7 @@ function displayBooks() {
             newBookDiv.appendChild(newPagesDiv);
             newPagesDiv.className = 'pagesDiv';
             newPagesDiv.classList.add('Book0' + i);
-            newPagesDiv.textContent = myLibrary[i].pages + " p";
+            newPagesDiv.textContent = myLibrary[i].pages + " pages";
 
             // Add readDiv in bookDiv 
             let newReadDiv = document.createElement('button');
