@@ -1,5 +1,12 @@
 const library = document.querySelector('.library');
+const modal = document.querySelector('.modal');
 const div = document.createElement('div');
+const titleValue = document.getElementById('titleInput').value;
+const authorValue = document.getElementById('authorInput').value;
+const pagesValue = document.getElementById('pagesInput').value;
+const readValue = document.getElementById('readInput').value;
+
+
 
 // List of books
 let myLibrary = [];
@@ -12,6 +19,11 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+// Show modal to add new Book
+function showModal() {
+    modal.style.display = "block";
+}
+
 // Add book to myLibrary
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
@@ -20,7 +32,7 @@ function addBookToLibrary(title, author, pages, read) {
 
 // Add book to Library displayed
 function addBooktoLib() {
-
+    modal.style.display = "none";
 }
 
 // Display all myLibrary books
