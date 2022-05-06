@@ -66,28 +66,28 @@ function displayBooks() {
             let newTitleDiv = document.createElement('div');
             newBookDiv.appendChild(newTitleDiv);
             newTitleDiv.className = 'titleDiv';
-            newTitleDiv.classList.add('Book0' + i);
+            newTitleDiv.classList.add('data' + i);
             newTitleDiv.textContent = myLibrary[i].title;
 
             // Add authorDiv in bookDiv 
             let newAuthorDiv = document.createElement('div');
             newBookDiv.appendChild(newAuthorDiv);
             newAuthorDiv.className = 'authorDiv';
-            newAuthorDiv.classList.add('Book0' + i);
+            newAuthorDiv.classList.add('data' + i);
             newAuthorDiv.textContent = myLibrary[i].author;
 
             // Add pagesDiv in bookDiv 
             let newPagesDiv = document.createElement('div');
             newBookDiv.appendChild(newPagesDiv);
             newPagesDiv.className = 'pagesDiv';
-            newPagesDiv.classList.add('Book0' + i);
+            newPagesDiv.classList.add('data' + i);
             newPagesDiv.textContent = myLibrary[i].pages + " pages";
 
             // Add readDiv in bookDiv 
             let newReadDiv = document.createElement('button');
             newBookDiv.appendChild(newReadDiv);
             newReadDiv.className = 'readDivBtn';
-            newReadDiv.classList.add('Book0' + i);
+            newReadDiv.classList.add('data' + i);
             newReadDiv.textContent = myLibrary[i].read;
             let readBtn = newReadDiv.textContent
 
