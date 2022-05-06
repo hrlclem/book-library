@@ -66,33 +66,35 @@ function displayBooks() {
             let newTitleDiv = document.createElement('div');
             newBookDiv.appendChild(newTitleDiv);
             newTitleDiv.className = 'titleDiv';
+            newTitleDiv.classList.add('Book0' + i);
             newTitleDiv.textContent = myLibrary[i].title;
 
             // Add authorDiv in bookDiv 
             let newAuthorDiv = document.createElement('div');
             newBookDiv.appendChild(newAuthorDiv);
             newAuthorDiv.className = 'authorDiv';
+            newAuthorDiv.classList.add('Book0' + i);
             newAuthorDiv.textContent = myLibrary[i].author;
 
             // Add pagesDiv in bookDiv 
             let newPagesDiv = document.createElement('div');
             newBookDiv.appendChild(newPagesDiv);
             newPagesDiv.className = 'pagesDiv';
+            newPagesDiv.classList.add('Book0' + i);
             newPagesDiv.textContent = myLibrary[i].pages;
 
             // Add readDiv in bookDiv 
             let newReadDiv = document.createElement('button');
             newBookDiv.appendChild(newReadDiv);
             newReadDiv.className = 'readDivBtn';
+            newReadDiv.classList.add('Book0' + i);
             newReadDiv.textContent = myLibrary[i].read;
 
             let readDivBtn = document.querySelector('.readDivBtn')
             if (myLibrary[i].read == true) {
                 readDivBtn.classList.add('trueReadBtn')
-                console.log(myLibrary[i].read + 2)
             } else {
                 readDivBtn.classList.add('falseReadBtn')
-                console.log(myLibrary[i].read)
             }
     }
 }

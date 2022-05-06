@@ -51,8 +51,8 @@
 }
 
 .bookDiv{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background-color: rgb(218, 216, 216);
     border-radius: 5px;
 }
@@ -80,7 +80,6 @@
     padding-left: 10%;
     padding-top: 10%;
 }
-
 
 
 /* MODAL */
