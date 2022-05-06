@@ -12,29 +12,66 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-}
+};
 
-// Show modal to add new Book
+// Show/Hide modal to add new Book
 function showModal() {
-    modal.style.display = "block";
+    if (modal.style.display == "block") {
+        modal.style.display = "none";
+    } else {
+        modal.style.display = "block";
+    }
+};
+
+// Add book to Library displayed
+function submitBook() {
+    addBookToLib();
+    modal.style.display = "none";
 }
 
 // Add book to myLibrary
 function addBookToLib() {
-    const titleValue = document.getElementById('titleInput').value;
-    const authorValue = document.getElementById('authorInput').value;
-    const pagesValue = document.getElementById('pagesInput').value;
-    const readValue = document.getElementById('readInput').value;
+    const title = document.getElementById('titleInput').value;
+    const author= document.getElementById('authorInput').value;
+    const pages = document.getElementById('pagesInput').value;
+    const read = document.getElementById('readInput').value;
 
-    let newBook = new Book(titleValue, authorValue, pagesValue, readValue);
+    let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+    displayLastBook();
 }
 
-// Add book to Library displayed
-function displayBooks() {
-    addBookToLib();
-    modal.style.display = "none";
-}
+function displayLastBook() {
+    let lastBook = myLibrary.length - 1;
+    // Create bookDiv
+    let newBookDiv = document.createElement('div');
+    library.appendChild(newBookDiv);
+    newBookDiv.className = 'bookDiv';
+
+        // Add titleDiv in bookDiv 
+        let newTitleDiv = document.createElement('div');
+        newBookDiv.appendChild(newTitleDiv);
+        newTitleDiv.className = 'titleDiv';
+        newTitleDiv.textContent = myLibrary[lastBook].title;
+
+        // Add authorDiv in bookDiv 
+        let newAuthorDiv = document.createElement('div');
+        newBookDiv.appendChild(newAuthorDiv);
+        newAuthorDiv.className = 'authorDiv';
+        newAuthorDiv.textContent = myLibrary[lastBook].author;
+
+        // Add pagesDiv in bookDiv 
+        let newPagesDiv = document.createElement('div');
+        newBookDiv.appendChild(newPagesDiv);
+        newPagesDiv.className = 'pagesDiv';
+        newPagesDiv.textContent = myLibrary[lastBook].pages;
+
+        // Add readDiv in bookDiv 
+        let newReadDiv = document.createElement('div');
+        newBookDiv.appendChild(newReadDiv);
+        newReadDiv.className = 'readDiv';
+        newReadDiv.textContent = myLibrary[lastBook].read;
+};
 
 // Display all myLibrary books
 function displayBooks() {
@@ -72,9 +109,9 @@ function displayBooks() {
 }
 
 
-addBook("Yes Man", "Bob Dylan", 43, true);
-addBook("No Man", "Ron Dylan", 34, false);
-addBook("Maybe Man", "Dan Dylan", 73, true);
+// addBook("Yes Man", "Bob Dylan", 43, true);
+// addBook("No Man", "Ron Dylan", 34, false);
+// addBook("Maybe Man", "Dan Dylan", 73, true);
 displayBooks();
 
 
