@@ -1,11 +1,6 @@
 const library = document.querySelector('.library');
 const modal = document.querySelector('.modal');
 const div = document.createElement('div');
-const titleValue = document.getElementById('titleInput').value;
-const authorValue = document.getElementById('authorInput').value;
-const pagesValue = document.getElementById('pagesInput').value;
-const readValue = document.getElementById('readInput').value;
-
 
 
 // List of books
@@ -25,13 +20,19 @@ function showModal() {
 }
 
 // Add book to myLibrary
-function addBookToLibrary(title, author, pages, read) {
-    let newBook = new Book(title, author, pages, read);
+function addBookToLib() {
+    const titleValue = document.getElementById('titleInput').value;
+    const authorValue = document.getElementById('authorInput').value;
+    const pagesValue = document.getElementById('pagesInput').value;
+    const readValue = document.getElementById('readInput').value;
+
+    let newBook = new Book(titleValue, authorValue, pagesValue, readValue);
     myLibrary.push(newBook);
 }
 
 // Add book to Library displayed
-function addBooktoLib() {
+function displayBooks() {
+    addBookToLib();
     modal.style.display = "none";
 }
 
@@ -71,9 +72,9 @@ function displayBooks() {
 }
 
 
-addBookToLibrary("Yes Man", "Bob Dylan", 43, true);
-addBookToLibrary("No Man", "Ron Dylan", 34, false);
-addBookToLibrary("Maybe Man", "Dan Dylan", 73, true);
+addBook("Yes Man", "Bob Dylan", 43, true);
+addBook("No Man", "Ron Dylan", 34, false);
+addBook("Maybe Man", "Dan Dylan", 73, true);
 displayBooks();
 
 
