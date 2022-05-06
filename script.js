@@ -52,8 +52,9 @@ function submitBook() {
     }
 }
 
-// Display all myLibrary books
-function displayBooks() {
+
+// Create book one by one
+function createBook(book) {
     let currentLibSize = myLibrary.length;
     for (i = currentLibSize - 1; i < myLibrary.length; i++){
 
@@ -89,13 +90,22 @@ function displayBooks() {
             newReadDiv.className = 'readDivBtn';
             newReadDiv.classList.add('Book0' + i);
             newReadDiv.textContent = myLibrary[i].read;
+            let readBtn = newReadDiv.textContent
+            let readDivBtn = document.querySelector('.readDivBtn')
+            if (readBtn == "true") {
+                readDivBtn.classList.add('trueReadBtn')
+            } else {
+                readDivBtn.classList.add('falseReadBtn')
+            }
     }
 }
 
-
-
-
-
+// Display all
+function displayBooks() {
+    for (let books of myLibrary.books) {
+        createBook(book);
+    }
+}
 
 
 // Show/Hide modal to add new Book
