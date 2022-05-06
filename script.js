@@ -1,7 +1,12 @@
 const library = document.querySelector('.library');
 const modal = document.querySelector('.modal');
+const modalBox = document.querySelector('.modalBox');
+const errorMessage = document.querySelector('.errorMessage');
 const div = document.createElement('div');
 
+modal.addEventListener('click', () => {
+    showModal()}
+);
 
 // List of books
 let myLibrary = [];
@@ -23,20 +28,44 @@ function showModal() {
     }
 };
 
+// Show/Hide error Message for empty fields
+function showHideError(){
+    if (errorMessage.style.display == "block") {
+        errorMessage.style.display = "none";
+    } else {
+        errorMessage.style.display = "block";
+    }
+}
+
 // Add book to Library displayed
 function submitBook() {
-    addBookToLib();
-    modal.style.display = "none";
+    if (document.getElementById('titleInput').value == '' ||
+        document.getElementById('authorInput').value == '' ||
+        document.getElementById('pagesInput').value == '') {
+            if (errorMessage.style.display == "block") {
+                return;
+            } else {
+                showHideError();
+                return;
+            }
+    } else {
+        addBookToLib();
+        modal.style.display = "none";
+        resetInputValues();
+        showHideError();
+    }
 }
+
+
 
 // Add book to myLibrary
 function addBookToLib() {
-    const title = document.getElementById('titleInput').value;
-    const author= document.getElementById('authorInput').value;
-    const pages = document.getElementById('pagesInput').value;
-    const read = document.getElementById('readInput').value;
+    const titleValue = document.getElementById('titleInput').value;
+    const authorValue = document.getElementById('authorInput').value;
+    const pagesValue = document.getElementById('pagesInput').value;
+    const readValue = document.getElementById('readInput').checked;
 
-    let newBook = new Book(title, author, pages, read);
+    let newBook = new Book(titleValue, authorValue, pagesValue, readValue);
     myLibrary.push(newBook);
     displayLastBook();
 }
@@ -106,6 +135,13 @@ function displayBooks() {
             newReadDiv.className = 'readDiv';
             newReadDiv.textContent = myLibrary[i].read;
     }
+}
+
+function resetInputValues(){
+    document.getElementById('titleInput').value = '';
+    document.getElementById('authorInput').value = '';
+    document.getElementById('pagesInput').value = '';
+    document.getElementById('readInput').checked = false;
 }
 
 

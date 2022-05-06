@@ -17,12 +17,13 @@
     <div class="modal">
         <div class="modalBox">
             <span class="titleModal">Add new Book</span>
-            <input class="titleInput" id="titleInput" placeholder="Title">
-            <input class="authorInput" id="authorInput" placeholder="Author">
-            <input class="pagesInput" id="pagesInput" placeholder="Pages" type="number">
+            <input class="titleInput" id="titleInput" placeholder="Title" required>
+            <input class="authorInput" id="authorInput" placeholder="Author" required>
+            <input class="pagesInput" id="pagesInput" placeholder="Pages" type="number" required>
             <span class="readQuestion">Have you read it?</span>
             <input class="readInput" id="readInput" type="checkbox">
             <button class="submitBtn" onclick="submitBook()">Submit</button>
+            <span class="errorMessage">Please enter a Title, Author and Number of pages</span>
         </div>
     </div>
     <div class="footer"> Clément Hurel © All rights reserved, 2022</div>

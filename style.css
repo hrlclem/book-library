@@ -135,6 +135,15 @@
     background-color: green;
 }
 
+.errorMessage{
+    display:none;
+    justify-items: center;
+    text-align: center;
+    font-size: 10px;
+    color: red;
+    font-weight: lighter;
+}
+
 
 
 
