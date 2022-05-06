@@ -81,7 +81,7 @@ function displayBooks() {
             newBookDiv.appendChild(newPagesDiv);
             newPagesDiv.className = 'pagesDiv';
             newPagesDiv.classList.add('Book0' + i);
-            newPagesDiv.textContent = myLibrary[i].pages;
+            newPagesDiv.textContent = myLibrary[i].pages + " pages";
 
             // Add readDiv in bookDiv 
             let newReadDiv = document.createElement('button');
@@ -89,15 +89,6 @@ function displayBooks() {
             newReadDiv.className = 'readDivBtn';
             newReadDiv.classList.add('Book0' + i);
             newReadDiv.textContent = myLibrary[i].read;
-            let readBtn = newReadDiv.textContent
-
-
-            let readDivBtn = document.querySelector('.readDivBtn')
-            if (readBtn == "true") {
-                readDivBtn.classList.add('trueReadBtn')
-            } else {
-                readDivBtn.classList.add('falseReadBtn')
-            }
     }
 }
 
