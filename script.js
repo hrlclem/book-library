@@ -4,13 +4,15 @@ const modalBox = document.querySelector('.modalBox');
 const errorMessage = document.querySelector('.errorMessage');
 const div = document.createElement('div');
 
-modal.addEventListener('click', () => {
-    showModal()}
-);
 
 // List of books
-let myLibrary = [];
+let myLibrary = [{title: "The Alchemist", author: "Paulo Coehlo", pages: 230, read: true}];
 
+displayBooks();
+
+
+
+            
 // Create book function
 function Book(title, author, pages, read) {
   this.title = title;
@@ -18,43 +20,6 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 };
-
-// Show/Hide modal to add new Book
-function showModal() {
-    if (modal.style.display == "block") {
-        modal.style.display = "none";
-    } else {
-        modal.style.display = "block";
-    }
-};
-
-// Show/Hide error Message for empty fields
-function showHideError(){
-    if (errorMessage.style.display == "block") {
-        errorMessage.style.display = "none";
-    } else {
-        errorMessage.style.display = "block";
-    }
-}
-
-// Add book to Library displayed
-function submitBook() {
-    if (document.getElementById('titleInput').value == '' ||
-        document.getElementById('authorInput').value == '' ||
-        document.getElementById('pagesInput').value == '') {
-            if (errorMessage.style.display == "block") {
-                return;
-            } else {
-                showHideError();
-                return;
-            }
-    } else {
-        addBookToLib();
-        modal.style.display = "none";
-        resetInputValues();
-        showHideError();
-    }
-}
 
 
 
@@ -67,40 +32,29 @@ function addBookToLib() {
 
     let newBook = new Book(titleValue, authorValue, pagesValue, readValue);
     myLibrary.push(newBook);
-    displayLastBook();
+    displayBooks();
+};
+
+// Submit book to Library displayed
+function submitBook() {
+    if (document.getElementById('titleInput').value == '' ||
+        document.getElementById('authorInput').value == '' ||
+        document.getElementById('pagesInput').value == '') {
+            if (errorMessage.style.display == "block") {
+                return;
+            } else {
+                showHideError();
+                return;
+            }
+    } else {
+        addBookToLib();
+        resetInputValues();
+        modal.style.display = "none";
+        errorMessage.style.display = "none";
+    }
 }
 
-function displayLastBook() {
-    let lastBook = myLibrary.length - 1;
-    // Create bookDiv
-    let newBookDiv = document.createElement('div');
-    library.appendChild(newBookDiv);
-    newBookDiv.className = 'bookDiv';
 
-        // Add titleDiv in bookDiv 
-        let newTitleDiv = document.createElement('div');
-        newBookDiv.appendChild(newTitleDiv);
-        newTitleDiv.className = 'titleDiv';
-        newTitleDiv.textContent = myLibrary[lastBook].title;
-
-        // Add authorDiv in bookDiv 
-        let newAuthorDiv = document.createElement('div');
-        newBookDiv.appendChild(newAuthorDiv);
-        newAuthorDiv.className = 'authorDiv';
-        newAuthorDiv.textContent = myLibrary[lastBook].author;
-
-        // Add pagesDiv in bookDiv 
-        let newPagesDiv = document.createElement('div');
-        newBookDiv.appendChild(newPagesDiv);
-        newPagesDiv.className = 'pagesDiv';
-        newPagesDiv.textContent = myLibrary[lastBook].pages;
-
-        // Add readDiv in bookDiv 
-        let newReadDiv = document.createElement('div');
-        newBookDiv.appendChild(newReadDiv);
-        newReadDiv.className = 'readDiv';
-        newReadDiv.textContent = myLibrary[lastBook].read;
-};
 
 // Display all myLibrary books
 function displayBooks() {
@@ -130,12 +84,43 @@ function displayBooks() {
             newPagesDiv.textContent = myLibrary[i].pages;
 
             // Add readDiv in bookDiv 
-            let newReadDiv = document.createElement('div');
+            let newReadDiv = document.createElement('button');
             newBookDiv.appendChild(newReadDiv);
-            newReadDiv.className = 'readDiv';
+            newReadDiv.className = 'readDivBtn';
             newReadDiv.textContent = myLibrary[i].read;
+
+            let readDivBtn = document.querySelector('.readDivBtn')
+            if (myLibrary[i].read == true) {
+                readDivBtn.classList.add('trueReadBtn')
+                console.log(myLibrary[i].read + 2)
+            } else {
+                readDivBtn.classList.add('falseReadBtn')
+                console.log(myLibrary[i].read)
+            }
     }
 }
+
+
+
+
+
+// Show/Hide modal to add new Book
+function showModal() {
+    if (modal.style.display == "block") {
+        modal.style.display = "none";
+    } else {
+        modal.style.display = "block";
+    }
+};
+
+// Show/Hide error Message for empty fields
+function showHideError(){
+    if (errorMessage.style.display == "block") {
+        errorMessage.style.display = "none";
+    } else {
+        errorMessage.style.display = "block";
+    }
+};
 
 function resetInputValues(){
     document.getElementById('titleInput').value = '';
@@ -145,13 +130,63 @@ function resetInputValues(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
 // addBook("Yes Man", "Bob Dylan", 43, true);
 // addBook("No Man", "Ron Dylan", 34, false);
 // addBook("Maybe Man", "Dan Dylan", 73, true);
-displayBooks();
 
 
+// Display last book
+// function displayLastBook() {
+//     let lastBook = myLibrary.length - 1;
 
+//     // Create bookDiv
+//     let newBookDiv = document.createElement('div');
+//     library.appendChild(newBookDiv);
+//     newBookDiv.className = 'bookDiv';
+
+//         // Add titleDiv in bookDiv 
+//         let newTitleDiv = document.createElement('div');
+//         newBookDiv.appendChild(newTitleDiv);
+//         newTitleDiv.className = 'titleDiv';
+//         newTitleDiv.textContent = myLibrary[lastBook].title;
+
+//         // Add authorDiv in bookDiv 
+//         let newAuthorDiv = document.createElement('div');
+//         newBookDiv.appendChild(newAuthorDiv);
+//         newAuthorDiv.className = 'authorDiv';
+//         newAuthorDiv.textContent = myLibrary[lastBook].author;
+
+//         // Add pagesDiv in bookDiv 
+//         let newPagesDiv = document.createElement('div');
+//         newBookDiv.appendChild(newPagesDiv);
+//         newPagesDiv.className = 'pagesDiv';
+//         newPagesDiv.textContent = myLibrary[lastBook].pages;
+
+//         // Add readDiv in bookDiv 
+//         let newReadDiv = document.createElement('button');
+//         newBookDiv.appendChild(newReadDiv);
+//         newReadDiv.className = 'readDivBtn';
+//         newReadDiv.textContent = myLibrary[lastBook].read;
+
+//         let readDivBtn = document.querySelector('.readDivBtn')
+//         if (myLibrary[i].read == true) {
+//             readDivBtn.classList.add('trueReadBtn')
+//             console.log(myLibrary[i].read + 2)
+//         } else {
+//             readDivBtn.classList.add('falseReadBtn')
+//             console.log(myLibrary[i].read)
+//         }
+// };
 
 
 

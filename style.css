@@ -135,6 +135,15 @@
     background-color: green;
 }
 
+.exitBtn{
+    padding-left:5px;
+    padding-right:5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.4em;
+    background-color: rgb(229, 235, 229);
+}
+
 .errorMessage{
     display:none;
     justify-items: center;
@@ -144,6 +153,23 @@
     font-weight: lighter;
 }
 
+.trueReadBtn{
+    padding-left:5px;
+    padding-right:5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    background-color: rgb(46, 143, 46);
+}
+
+.falseReadBtn{
+    padding-left:5px;
+    padding-right:5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    background-color: rgb(206, 57, 20);
+}
 
 
 
