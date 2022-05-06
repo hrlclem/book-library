@@ -89,15 +89,19 @@ function displayBooks() {
             newReadDiv.className = 'readDivBtn';
             newReadDiv.classList.add('Book0' + i);
             newReadDiv.textContent = myLibrary[i].read;
+            let readBtn = newReadDiv.textContent
+
 
             let readDivBtn = document.querySelector('.readDivBtn')
-            if (myLibrary[i].read == true) {
+            if (readBtn == "true") {
                 readDivBtn.classList.add('trueReadBtn')
             } else {
                 readDivBtn.classList.add('falseReadBtn')
             }
     }
 }
+
+
 
 
 
