@@ -21,8 +21,6 @@ function Book(title, author, pages, read) {
   this.read = read;
 };
 
-
-
 // Add book to myLibrary
 function addBookToLib() {
     const titleValue = document.getElementById('titleInput').value;
@@ -54,11 +52,10 @@ function submitBook() {
     }
 }
 
-
-
 // Display all myLibrary books
 function displayBooks() {
-    for (i = 0; i < myLibrary.length; i++){
+    let currentLibSize = myLibrary.length;
+    for (i = currentLibSize - 1; i < myLibrary.length; i++){
 
         // Create bookDiv
         let newBookDiv = document.createElement('div');
@@ -194,16 +191,18 @@ function resetInputValues(){
 
 //PSEUDOCODE
 // DISPLAY EXISTING BOOKS
-// Go through MyLibrary
-// For each book, display it in grid with:
+// Go through MyLibrary----
+// For each book, display it in grid with:----
 //      Title
 //      Author
 //      Nbr of pages
 //      Read TRUE or FALSE (with button to change)
 //      Button to delete Book. If clicked, Booked is deleted and DISPLAY EXISTING BOOKS runs
 
-// When AddBook btn is clicked, modal appears
-// Each field fills the BookConstructor
+// When AddBook btn is clicked, modal appears---
+// Each field fills the BookConstructor----
 
-// When Submit is clicked, all BookConstructor data is pushed to MyLibrary
-// Run DISPLAY EXISTING BOOKS
+// When Submit is clicked, all BookConstructor data is pushed to MyLibrary----
+// Run DISPLAY EXISTING BOOKS----
+//
+// MAKE IT BEAUTIFUL
