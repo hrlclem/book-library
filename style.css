@@ -50,12 +50,36 @@
     justify-items: center;
 }
 
-.book{
+.bookDiv{
     width: 100px;
     height: 100px;
-    background-color: red;
+    background-color: rgb(218, 216, 216);
+    border-radius: 5px;
 }
 
+.titleDiv{
+    font-size: 16px;
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+.authorDiv{
+    font-size: 16px;
+    padding-left: 10%;
+    padding-top: 10%; 
+}
+
+.pagesDiv{
+    font-size: 16px;
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+.readDiv{
+    font-size: 16px;
+    padding-left: 10%;
+    padding-top: 10%;
+}
 
 
 

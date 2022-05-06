@@ -14,21 +14,55 @@ function Book(title, author, pages, read) {
 
 // Add book to myLibrary
 function addBookToLibrary(title, author, pages, read) {
-    const newBook = new Book(title, author, pages, read);
+    let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
 
 // Add book to Library displayed
 function addBooktoLib() {
-    const newElement = document.createElement('div');
-    library.appendChild(newElement);
-    newElement.className = 'book'
-    console.log('yes');
+
 }
+
+// Display all myLibrary books
+function displayBooks() {
+    for (i = 0; i < myLibrary.length; i++){
+
+        // Create bookDiv
+        let newBookDiv = document.createElement('div');
+        library.appendChild(newBookDiv);
+        newBookDiv.className = 'bookDiv';
+
+            // Add titleDiv in bookDiv 
+            let newTitleDiv = document.createElement('div');
+            newBookDiv.appendChild(newTitleDiv);
+            newTitleDiv.className = 'titleDiv';
+            newTitleDiv.textContent = myLibrary[i].title;
+
+            // Add authorDiv in bookDiv 
+            let newAuthorDiv = document.createElement('div');
+            newBookDiv.appendChild(newAuthorDiv);
+            newAuthorDiv.className = 'authorDiv';
+            newAuthorDiv.textContent = myLibrary[i].author;
+
+            // Add pagesDiv in bookDiv 
+            let newPagesDiv = document.createElement('div');
+            newBookDiv.appendChild(newPagesDiv);
+            newPagesDiv.className = 'pagesDiv';
+            newPagesDiv.textContent = myLibrary[i].pages;
+
+            // Add readDiv in bookDiv 
+            let newReadDiv = document.createElement('div');
+            newBookDiv.appendChild(newReadDiv);
+            newReadDiv.className = 'readDiv';
+            newReadDiv.textContent = myLibrary[i].read;
+    }
+}
+
 
 addBookToLibrary("Yes Man", "Bob Dylan", 43, true);
 addBookToLibrary("No Man", "Ron Dylan", 34, false);
 addBookToLibrary("Maybe Man", "Dan Dylan", 73, true);
+displayBooks();
 
 
 
