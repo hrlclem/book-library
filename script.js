@@ -90,13 +90,14 @@ function displayBooks() {
             newBookDiv.appendChild(newReadDiv);
             newReadDiv.className = 'readDivBtn';
 
+            // Update readBtn value
             let readDivBtn = document.querySelector('.readDivBtn');
             if (book.read) {
                 readDivBtn.textContent = 'Read'
-                readDivBtn.classList.add('trueReadBtn')
+                newReadDiv.className = 'trueReadBtn';
               } else {
                 readDivBtn.textContent = 'Not read'
-                readDivBtn.classList.add('falseReadBtn')
+                newReadDiv.className = 'falseReadBtn';
               }
     }
 };
