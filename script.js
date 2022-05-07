@@ -101,11 +101,12 @@ function displayBooks() {
             }
 
               newReadDiv.addEventListener('click', event => {
-                if (newReadDiv.className == "trueReadBtn") {
-                    console.log('true')
+                if (newReadDiv.classList.contains('trueReadBtn')) {
+                    newReadDiv.classList.remove('trueReadBtn', 'readDivBtn');
                     newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
                 } else {
                     console.log('false')
+                    newReadDiv.classList.remove('falseReadBtn', 'readDivBtn');
                     newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
                 }
             });
