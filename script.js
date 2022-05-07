@@ -1,4 +1,3 @@
-const library = document.querySelector('.library');
 const modal = document.querySelector('.modal');
 const modalBox = document.querySelector('.modalBox');
 const errorMessage = document.querySelector('.errorMessage');
@@ -6,14 +5,12 @@ const div = document.createElement('div');
 
 
 // List of books
-let myLibrary = [{title: "The Alchemist", author: "Paulo Coehlo", pages: 230, read: true}];
+let myLibrary = [{title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
+                {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: true}];
 
+let newBook;
 displayBooks();
 
-
-
-
-            
 // Create book function
 function Book(title, author, pages, read) {
   this.title = title;
@@ -21,6 +18,7 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 };
+
 
 // Submit book to Library displayed
 function submitBook() {
@@ -35,11 +33,19 @@ function submitBook() {
             }
     } else {
         addBookToLib();
-        resetInputValues();
+        formReset();
         modal.style.display = "none";
         errorMessage.style.display = "none";
     }
 };
+
+// Reset Library Displayed
+function resetLibDisplayed() {
+    let library = document.querySelector('.library');
+    library.innerHTML = '';
+}
+
+
 
 // Add book to myLibrary
 function addBookToLib() {
@@ -48,21 +54,22 @@ function addBookToLib() {
     const pagesValue = document.getElementById('pagesInput').value;
     const readValue = document.getElementById('readInput').checked;
 
-    let newBook = new Book(titleValue, authorValue, pagesValue, readValue);
+    newBook = new Book(titleValue, authorValue, pagesValue, readValue);
     myLibrary.push(newBook);
+    resetLibDisplayed();
     displayBooks();
 };
 
 // Display all myLibrary books
-function displayBooks(book) {
-    let newBookDiv = document.createElement('div');
-    let newTitleDiv = document.createElement('div');
-    let newAuthorDiv = document.createElement('div');
-    let newPagesDiv = document.createElement('div');
-    let newReadDiv = document.createElement('button');
+function displayBooks() {
+    for (i = 0; i < myLibrary.length; i++) {
+        let library = document.querySelector('.library');
+        let newBookDiv = document.createElement('div');
+        let newTitleDiv = document.createElement('div');
+        let newAuthorDiv = document.createElement('div');
+        let newPagesDiv = document.createElement('div');
+        let newReadDiv = document.createElement('button');
 
-
-    for (let book of myLibrary) {
         // Create bookDiv
         library.appendChild(newBookDiv);
         newBookDiv.className = 'bookDiv';
@@ -70,17 +77,17 @@ function displayBooks(book) {
             // Add titleDiv in bookDiv 
             newBookDiv.appendChild(newTitleDiv);
             newTitleDiv.className = 'titleDiv';
-            newTitleDiv.textContent = book.title;
+            newTitleDiv.textContent = myLibrary[i].title;
 
             // Add authorDiv in bookDiv 
             newBookDiv.appendChild(newAuthorDiv);
             newAuthorDiv.className = 'authorDiv';
-            newAuthorDiv.textContent = book.author;
+            newAuthorDiv.textContent = myLibrary[i].author;
 
             // Add pagesDiv in bookDiv 
             newBookDiv.appendChild(newPagesDiv);
             newPagesDiv.className = 'pagesDiv';
-            newPagesDiv.textContent = book.pages + " pages";
+            newPagesDiv.textContent = myLibrary[i].pages + " pages";
 
             // Add readDiv in bookDiv 
             newBookDiv.appendChild(newReadDiv);
@@ -88,7 +95,7 @@ function displayBooks(book) {
 
             // Update readBtn value
             let readDivBtn = document.querySelector('.readDivBtn');
-            if (book.read) {
+            if (myLibrary[i].read) {
                 readDivBtn.textContent = 'Read';
                 newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
               } else {
@@ -135,7 +142,7 @@ function showHideError(){
 
 
 // Reset form
-function resetInputValues(){
+function formReset(){
     document.getElementById('titleInput').value = '';
     document.getElementById('authorInput').value = '';
     document.getElementById('pagesInput').value = '';
