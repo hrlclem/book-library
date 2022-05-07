@@ -137,9 +137,7 @@ function displayBooks() {
             //     myLibrary.splice(myLibrary.indexOf(item),1);
             //     resetLibDisplayed();
             //     displayBooks();
-            // });
-
-        
+            // });   
     }
 };
 
