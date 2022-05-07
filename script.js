@@ -1,7 +1,7 @@
-const modal = document.querySelector('.modal');
-const modalBox = document.querySelector('.modalBox');
-const errorMessage = document.querySelector('.errorMessage');
-const div = document.createElement('div');
+const modal =           document.querySelector('.modal');
+const modalBox =        document.querySelector('.modalBox');
+const errorMessage =    document.querySelector('.errorMessage');
+const div =             document.createElement('div');
 
 
 // List of books
@@ -49,10 +49,10 @@ function resetLibDisplayed() {
 
 // Add book to myLibrary
 function addBookToLib() {
-    const titleValue = document.getElementById('titleInput').value;
-    const authorValue = document.getElementById('authorInput').value;
-    const pagesValue = document.getElementById('pagesInput').value;
-    const readValue = document.getElementById('readInput').checked;
+    const titleValue =      document.getElementById('titleInput').value;
+    const authorValue =     document.getElementById('authorInput').value;
+    const pagesValue =      document.getElementById('pagesInput').value;
+    const readValue =       document.getElementById('readInput').checked;
 
     newBook = new Book(titleValue, authorValue, pagesValue, readValue);
     myLibrary.push(newBook);
@@ -62,14 +62,15 @@ function addBookToLib() {
 
 // Display all myLibrary books
 function displayBooks() {
+    console.log(myLibrary);
     for (i = 0; i < myLibrary.length; i++) {
-        let library = document.querySelector('.library');
-        let newBookDiv = document.createElement('div');
-        let newTitleDiv = document.createElement('div');
-        let newAuthorDiv = document.createElement('div');
-        let newPagesDiv = document.createElement('div');
-        let newReadDiv = document.createElement('button');
-        let newRemoveDiv = document.createElement('button');
+        let library =       document.querySelector('.library');
+        let newBookDiv =    document.createElement('div');
+        let newTitleDiv =   document.createElement('div');
+        let newAuthorDiv =  document.createElement('div');
+        let newPagesDiv =   document.createElement('div');
+        let newReadDiv =    document.createElement('button');
+        let newRemoveDiv =  document.createElement('button');
 
         // Create bookDiv
         library.appendChild(newBookDiv);
@@ -104,24 +105,29 @@ function displayBooks() {
                 if (myLibrary[i].read === true) {
                     newReadDiv.textContent = 'Read';
                     newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
-                    } else {
+                } 
+                else 
+                {
                     newReadDiv.textContent = 'Not read';
                     newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
                 }
 
                 // Change Read status when clicked
                     newReadDiv.addEventListener('click', event => {
+                        let buffer = event.target.id;
                     if (newReadDiv.classList.contains('trueReadBtn')) {
                         newReadDiv.classList.remove('trueReadBtn', 'readDivBtn');
                         newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
-                        myLibrary[i].read = false;
+                        myLibrary[buffer].read = false;
                         readDivBtn.textContent = 'Not read';
                         resetLibDisplayed();
                         displayBooks();
-                    } else {
+                    } 
+                    else 
+                    {
                         newReadDiv.classList.remove('falseReadBtn', 'readDivBtn');
                         newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
-                        myLibrary[i].read = true;
+                        myLibrary[buffer].read = true;
                         readDivBtn.textContent = 'Read';
                         resetLibDisplayed();
                         displayBooks();
@@ -133,11 +139,14 @@ function displayBooks() {
             newRemoveDiv.classList.add('removeDivBtn');
             newRemoveDiv.setAttribute('id', i);
             newRemoveDiv.textContent = 'Remove';
-            // newRemoveDiv.addEventListener('click', event => {
-            //     myLibrary.splice(myLibrary.indexOf(item),1);
-            //     resetLibDisplayed();
-            //     displayBooks();
-            // });   
+            newRemoveDiv.addEventListener('click', event => {
+                let buffer2 = event.target.id;
+                console.log(buffer2);
+                myLibrary.splice(myLibrary[buffer2], 1);
+                console.log(myLibrary);
+                resetLibDisplayed();
+                displayBooks();
+            });   
     }
 };
 
@@ -145,7 +154,9 @@ function displayBooks() {
 function showModal() {
     if (modal.style.display == "block") {
         modal.style.display = "none";
-    } else {
+    } 
+    else 
+    {
         modal.style.display = "block";
     }
 };
@@ -154,7 +165,9 @@ function showModal() {
 function showHideError(){
     if (errorMessage.style.display == "block") {
         errorMessage.style.display = "none";
-    } else {
+    } 
+    else 
+    {
         errorMessage.style.display = "block";
     }
 };
