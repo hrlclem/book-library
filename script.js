@@ -22,19 +22,6 @@ function Book(title, author, pages, read) {
   this.read = read;
 };
 
-// Add book to myLibrary
-function addBookToLib() {
-    const titleValue = document.getElementById('titleInput').value;
-    const authorValue = document.getElementById('authorInput').value;
-    const pagesValue = document.getElementById('pagesInput').value;
-    const readValue = document.getElementById('readInput').checked;
-
-    let newBook = new Book(titleValue, authorValue, pagesValue, readValue);
-    myLibrary.push(newBook);
-    displayBooks();
-};
-
-
 // Submit book to Library displayed
 function submitBook() {
     if (document.getElementById('titleInput').value == '' ||
@@ -52,19 +39,28 @@ function submitBook() {
         modal.style.display = "none";
         errorMessage.style.display = "none";
     }
-}
+};
+
+// Add book to myLibrary
+function addBookToLib() {
+    const titleValue = document.getElementById('titleInput').value;
+    const authorValue = document.getElementById('authorInput').value;
+    const pagesValue = document.getElementById('pagesInput').value;
+    const readValue = document.getElementById('readInput').checked;
+
+    let newBook = new Book(titleValue, authorValue, pagesValue, readValue);
+    myLibrary.push(newBook);
+    displayBooks();
+};
 
 // Display all myLibrary books
-function displayBooks() {
+function displayBooks(book) {
     let newBookDiv = document.createElement('div');
     let newTitleDiv = document.createElement('div');
     let newAuthorDiv = document.createElement('div');
     let newPagesDiv = document.createElement('div');
     let newReadDiv = document.createElement('button');
 
-    // for (let book of myLibrary) {
-    // console.log(book)
-    // }
 
     for (let book of myLibrary) {
         // Create bookDiv
@@ -88,7 +84,7 @@ function displayBooks() {
 
             // Add readDiv in bookDiv 
             newBookDiv.appendChild(newReadDiv);
-            newReadDiv.className = 'readDivBtn';
+            newReadDiv.classList.add('readDivBtn');
 
             // Update readBtn value
             let readDivBtn = document.querySelector('.readDivBtn');
@@ -113,7 +109,8 @@ function displayBooks() {
                     book.read = true;
                     readDivBtn.textContent = 'Read';
                 }
-            });
+            }
+        );
     }
 };
 
