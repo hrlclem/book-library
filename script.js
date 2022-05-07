@@ -94,11 +94,21 @@ function displayBooks() {
             let readDivBtn = document.querySelector('.readDivBtn');
             if (book.read) {
                 readDivBtn.textContent = 'Read'
-                newReadDiv.className = 'trueReadBtn';
+                newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
               } else {
                 readDivBtn.textContent = 'Not read'
-                newReadDiv.className = 'falseReadBtn';
-              }
+                newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
+            }
+
+              newReadDiv.addEventListener('click', event => {
+                if (newReadDiv.className == "trueReadBtn") {
+                    console.log('true')
+                    newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
+                } else {
+                    console.log('false')
+                    newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
+                }
+            });
     }
 };
 
@@ -111,6 +121,18 @@ function showModal() {
         modal.style.display = "block";
     }
 };
+
+// Change Read/Not read button value
+// function changeReadBtn() {
+//     const readBtn = document.querySelector('.readDivBtn');
+//     if (readBtn.className == "trueReadBtn") {
+//         console.log('true')
+//         readBtn.classList.add('falseReadBtn', 'readDivBtn');
+//     } else {
+//         console.log('false')
+//         readBtn.classList.add('trueReadBtn', 'readDivBtn');
+//     }
+// };
 
 // Show/Hide error Message for empty fields
 function showHideError(){
