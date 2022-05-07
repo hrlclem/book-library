@@ -62,7 +62,6 @@ function addBookToLib() {
 
 // Display all myLibrary books
 function displayBooks() {
-    console.log(myLibrary);
     for (i = 0; i < myLibrary.length; i++) {
         let library =       document.querySelector('.library');
         let newBookDiv =    document.createElement('div');
@@ -141,9 +140,7 @@ function displayBooks() {
             newRemoveDiv.textContent = 'Remove';
             newRemoveDiv.addEventListener('click', event => {
                 let buffer2 = event.target.id;
-                console.log(buffer2);
-                myLibrary.splice(myLibrary[buffer2], 1);
-                console.log(myLibrary);
+                myLibrary.splice(buffer2, 1);
                 resetLibDisplayed();
                 displayBooks();
             });   
