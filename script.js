@@ -93,21 +93,25 @@ function displayBooks() {
             // Update readBtn value
             let readDivBtn = document.querySelector('.readDivBtn');
             if (book.read) {
-                readDivBtn.textContent = 'Read'
+                readDivBtn.textContent = 'Read';
                 newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
               } else {
-                readDivBtn.textContent = 'Not read'
+                readDivBtn.textContent = 'Not read';
                 newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
             }
 
+            // Change Read status when clicked
               newReadDiv.addEventListener('click', event => {
                 if (newReadDiv.classList.contains('trueReadBtn')) {
                     newReadDiv.classList.remove('trueReadBtn', 'readDivBtn');
                     newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
+                    book.read = false;
+                    readDivBtn.textContent = 'Not read';
                 } else {
-                    console.log('false')
                     newReadDiv.classList.remove('falseReadBtn', 'readDivBtn');
                     newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
+                    book.read = true;
+                    readDivBtn.textContent = 'Read';
                 }
             });
     }
@@ -123,18 +127,6 @@ function showModal() {
     }
 };
 
-// Change Read/Not read button value
-// function changeReadBtn() {
-//     const readBtn = document.querySelector('.readDivBtn');
-//     if (readBtn.className == "trueReadBtn") {
-//         console.log('true')
-//         readBtn.classList.add('falseReadBtn', 'readDivBtn');
-//     } else {
-//         console.log('false')
-//         readBtn.classList.add('trueReadBtn', 'readDivBtn');
-//     }
-// };
-
 // Show/Hide error Message for empty fields
 function showHideError(){
     if (errorMessage.style.display == "block") {
@@ -144,107 +136,14 @@ function showHideError(){
     }
 };
 
+
+// Reset form
 function resetInputValues(){
     document.getElementById('titleInput').value = '';
     document.getElementById('authorInput').value = '';
     document.getElementById('pagesInput').value = '';
     document.getElementById('readInput').checked = false;
 };
-
-
-
-
-
-    // for (i = currentLibSize - 1; i < myLibrary.length; i++){
-
-    //     // Create bookDiv
-    //     library.appendChild(newBookDiv);
-    //     newBookDiv.className = 'bookDiv';
-
-    //         // Add titleDiv in bookDiv 
-    //         newBookDiv.appendChild(newTitleDiv);
-    //         newTitleDiv.className = 'titleDiv';
-    //         newTitleDiv.classList.add('data' + i);
-    //         newTitleDiv.textContent = myLibrary[i].title;
-
-    //         // Add authorDiv in bookDiv 
-    //         newBookDiv.appendChild(newAuthorDiv);
-    //         newAuthorDiv.className = 'authorDiv';
-    //         newAuthorDiv.classList.add('data' + i);
-    //         newAuthorDiv.textContent = myLibrary[i].author;
-
-    //         // Add pagesDiv in bookDiv 
-    //         newBookDiv.appendChild(newPagesDiv);
-    //         newPagesDiv.className = 'pagesDiv';
-    //         newPagesDiv.classList.add('data' + i);
-    //         newPagesDiv.textContent = myLibrary[i].pages + " pages";
-
-    //         // Add readDiv in bookDiv 
-    //         newBookDiv.appendChild(newReadDiv);
-    //         newReadDiv.className = 'readDivBtn';
-    //         newReadDiv.classList.add('data' + i);
-    //         newReadDiv.textContent = myLibrary[i].read;
-    //         let readBtn = newReadDiv.textContent
-
-    //         if (readBtn == "true") {
-    //             readDivBtn.classList.add('trueReadBtn')
-    //         } else {
-    //             readDivBtn.classList.add('falseReadBtn')
-    //         }
-    // }
-
-
-
-
-
-// addBook("Yes Man", "Bob Dylan", 43, true);
-// addBook("No Man", "Ron Dylan", 34, false);
-// addBook("Maybe Man", "Dan Dylan", 73, true);
-
-
-// Display last book
-// function displayLastBook() {
-//     let lastBook = myLibrary.length - 1;
-
-//     // Create bookDiv
-//     let newBookDiv = document.createElement('div');
-//     library.appendChild(newBookDiv);
-//     newBookDiv.className = 'bookDiv';
-
-//         // Add titleDiv in bookDiv 
-//         let newTitleDiv = document.createElement('div');
-//         newBookDiv.appendChild(newTitleDiv);
-//         newTitleDiv.className = 'titleDiv';
-//         newTitleDiv.textContent = myLibrary[lastBook].title;
-
-//         // Add authorDiv in bookDiv 
-//         let newAuthorDiv = document.createElement('div');
-//         newBookDiv.appendChild(newAuthorDiv);
-//         newAuthorDiv.className = 'authorDiv';
-//         newAuthorDiv.textContent = myLibrary[lastBook].author;
-
-//         // Add pagesDiv in bookDiv 
-//         let newPagesDiv = document.createElement('div');
-//         newBookDiv.appendChild(newPagesDiv);
-//         newPagesDiv.className = 'pagesDiv';
-//         newPagesDiv.textContent = myLibrary[lastBook].pages;
-
-//         // Add readDiv in bookDiv 
-//         let newReadDiv = document.createElement('button');
-//         newBookDiv.appendChild(newReadDiv);
-//         newReadDiv.className = 'readDivBtn';
-//         newReadDiv.textContent = myLibrary[lastBook].read;
-
-//         let readDivBtn = document.querySelector('.readDivBtn')
-//         if (myLibrary[i].read == true) {
-//             readDivBtn.classList.add('trueReadBtn')
-//             console.log(myLibrary[i].read + 2)
-//         } else {
-//             readDivBtn.classList.add('falseReadBtn')
-//             console.log(myLibrary[i].read)
-//         }
-// };
-
 
 
 
