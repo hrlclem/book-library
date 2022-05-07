@@ -12,6 +12,7 @@ displayBooks();
 
 
 
+
             
 // Create book function
 function Book(title, author, pages, read) {
@@ -32,6 +33,7 @@ function addBookToLib() {
     myLibrary.push(newBook);
     displayBooks();
 };
+
 
 // Submit book to Library displayed
 function submitBook() {
@@ -54,56 +56,45 @@ function submitBook() {
 
 // Display all myLibrary books
 function displayBooks() {
-    let currentLibSize = myLibrary.length;
-    for (i = currentLibSize - 1; i < myLibrary.length; i++){
+    let newBookDiv = document.createElement('div');
+    let newTitleDiv = document.createElement('div');
+    let newAuthorDiv = document.createElement('div');
+    let newPagesDiv = document.createElement('div');
+    let newReadDiv = document.createElement('button');
+    let readDivBtn = document.querySelector('.readDivBtn');
 
+    for (let book of myLibrary) {
         // Create bookDiv
-        let newBookDiv = document.createElement('div');
         library.appendChild(newBookDiv);
         newBookDiv.className = 'bookDiv';
 
             // Add titleDiv in bookDiv 
-            let newTitleDiv = document.createElement('div');
             newBookDiv.appendChild(newTitleDiv);
             newTitleDiv.className = 'titleDiv';
-            newTitleDiv.classList.add('data' + i);
-            newTitleDiv.textContent = myLibrary[i].title;
+            newTitleDiv.textContent = book.title;
 
             // Add authorDiv in bookDiv 
-            let newAuthorDiv = document.createElement('div');
             newBookDiv.appendChild(newAuthorDiv);
             newAuthorDiv.className = 'authorDiv';
-            newAuthorDiv.classList.add('data' + i);
-            newAuthorDiv.textContent = myLibrary[i].author;
+            newAuthorDiv.textContent = book.author;
 
             // Add pagesDiv in bookDiv 
-            let newPagesDiv = document.createElement('div');
             newBookDiv.appendChild(newPagesDiv);
             newPagesDiv.className = 'pagesDiv';
-            newPagesDiv.classList.add('data' + i);
-            newPagesDiv.textContent = myLibrary[i].pages + " pages";
+            newPagesDiv.textContent = book.pages + " pages";
 
             // Add readDiv in bookDiv 
-            let newReadDiv = document.createElement('button');
             newBookDiv.appendChild(newReadDiv);
             newReadDiv.className = 'readDivBtn';
-            newReadDiv.classList.add('data' + i);
-            newReadDiv.textContent = myLibrary[i].read;
-            let readBtn = newReadDiv.textContent
+            newReadDiv.textContent = book.read;
 
-            let readDivBtn = document.querySelector('.readDivBtn')
-            if (readBtn == "true") {
+            if (book.read == "true") {
                 readDivBtn.classList.add('trueReadBtn')
             } else {
                 readDivBtn.classList.add('falseReadBtn')
             }
     }
-}
-
-
-
-
-
+};
 
 
 // Show/Hide modal to add new Book
@@ -129,14 +120,49 @@ function resetInputValues(){
     document.getElementById('authorInput').value = '';
     document.getElementById('pagesInput').value = '';
     document.getElementById('readInput').checked = false;
-}
+};
 
 
 
 
 
+    // for (i = currentLibSize - 1; i < myLibrary.length; i++){
 
+    //     // Create bookDiv
+    //     library.appendChild(newBookDiv);
+    //     newBookDiv.className = 'bookDiv';
 
+    //         // Add titleDiv in bookDiv 
+    //         newBookDiv.appendChild(newTitleDiv);
+    //         newTitleDiv.className = 'titleDiv';
+    //         newTitleDiv.classList.add('data' + i);
+    //         newTitleDiv.textContent = myLibrary[i].title;
+
+    //         // Add authorDiv in bookDiv 
+    //         newBookDiv.appendChild(newAuthorDiv);
+    //         newAuthorDiv.className = 'authorDiv';
+    //         newAuthorDiv.classList.add('data' + i);
+    //         newAuthorDiv.textContent = myLibrary[i].author;
+
+    //         // Add pagesDiv in bookDiv 
+    //         newBookDiv.appendChild(newPagesDiv);
+    //         newPagesDiv.className = 'pagesDiv';
+    //         newPagesDiv.classList.add('data' + i);
+    //         newPagesDiv.textContent = myLibrary[i].pages + " pages";
+
+    //         // Add readDiv in bookDiv 
+    //         newBookDiv.appendChild(newReadDiv);
+    //         newReadDiv.className = 'readDivBtn';
+    //         newReadDiv.classList.add('data' + i);
+    //         newReadDiv.textContent = myLibrary[i].read;
+    //         let readBtn = newReadDiv.textContent
+
+    //         if (readBtn == "true") {
+    //             readDivBtn.classList.add('trueReadBtn')
+    //         } else {
+    //             readDivBtn.classList.add('falseReadBtn')
+    //         }
+    // }
 
 
 
