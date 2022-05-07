@@ -5,8 +5,8 @@ const div = document.createElement('div');
 
 
 // List of books
-let myLibrary = [{title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
-                {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: true}];
+let myLibrary =   [ {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
+                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: true}];
 
 let newBook;
 displayBooks();
