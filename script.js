@@ -79,21 +79,25 @@ function displayBooks() {
             // Add titleDiv in bookDiv 
             newBookDiv.appendChild(newTitleDiv);
             newTitleDiv.className = 'titleDiv';
+            newTitleDiv.setAttribute('id', i);
             newTitleDiv.textContent = myLibrary[i].title;
 
             // Add authorDiv in bookDiv 
             newBookDiv.appendChild(newAuthorDiv);
             newAuthorDiv.className = 'authorDiv';
+            newAuthorDiv.setAttribute('id', i);
             newAuthorDiv.textContent = myLibrary[i].author;
 
             // Add pagesDiv in bookDiv 
             newBookDiv.appendChild(newPagesDiv);
             newPagesDiv.className = 'pagesDiv';
+            newPagesDiv.setAttribute('id', i);
             newPagesDiv.textContent = myLibrary[i].pages + " pages";
 
             // Add readDiv in bookDiv 
             newBookDiv.appendChild(newReadDiv);
             newReadDiv.classList.add('readDivBtn');
+            newReadDiv.setAttribute('id', i);
 
                 // Update readBtn value
                 let readDivBtn = document.querySelector('.readDivBtn');
@@ -127,12 +131,13 @@ function displayBooks() {
             // Add removeDiv in bookDiv 
             newBookDiv.appendChild(newRemoveDiv);
             newRemoveDiv.classList.add('removeDivBtn');
-            newRemoveDiv.textContent = 'Remove Book';
-            newRemoveDiv.addEventListener('click', event => {
-                myLibrary.splice(myLibrary.indexOf(item),1);
-                resetLibDisplayed();
-                displayBooks();
-            });
+            newRemoveDiv.setAttribute('id', i);
+            newRemoveDiv.textContent = 'Remove';
+            // newRemoveDiv.addEventListener('click', event => {
+            //     myLibrary.splice(myLibrary.indexOf(item),1);
+            //     resetLibDisplayed();
+            //     displayBooks();
+            // });
 
         
     }
