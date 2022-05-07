@@ -61,7 +61,10 @@ function displayBooks() {
     let newAuthorDiv = document.createElement('div');
     let newPagesDiv = document.createElement('div');
     let newReadDiv = document.createElement('button');
-    let readDivBtn = document.querySelector('.readDivBtn');
+
+    // for (let book of myLibrary) {
+    // console.log(book)
+    // }
 
     for (let book of myLibrary) {
         // Create bookDiv
@@ -86,13 +89,15 @@ function displayBooks() {
             // Add readDiv in bookDiv 
             newBookDiv.appendChild(newReadDiv);
             newReadDiv.className = 'readDivBtn';
-            newReadDiv.textContent = book.read;
 
-            if (book.read == "true") {
+            let readDivBtn = document.querySelector('.readDivBtn');
+            if (book.read) {
+                readDivBtn.textContent = 'Read'
                 readDivBtn.classList.add('trueReadBtn')
-            } else {
+              } else {
+                readDivBtn.textContent = 'Not read'
                 readDivBtn.classList.add('falseReadBtn')
-            }
+              }
     }
 };
 
