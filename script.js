@@ -95,11 +95,11 @@ function displayBooks() {
 
             // Update readBtn value
             let readDivBtn = document.querySelector('.readDivBtn');
-            if (myLibrary[i].read) {
-                readDivBtn.textContent = 'Read';
+            if (myLibrary[i].read === true) {
+                newReadDiv.textContent = 'Read';
                 newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
               } else {
-                readDivBtn.textContent = 'Not read';
+                newReadDiv.textContent = 'Not read';
                 newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
             }
 
@@ -108,13 +108,17 @@ function displayBooks() {
                 if (newReadDiv.classList.contains('trueReadBtn')) {
                     newReadDiv.classList.remove('trueReadBtn', 'readDivBtn');
                     newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
-                    book.read = false;
+                    myLibrary[i].read = false;
                     readDivBtn.textContent = 'Not read';
+                    resetLibDisplayed();
+                    displayBooks();
                 } else {
                     newReadDiv.classList.remove('falseReadBtn', 'readDivBtn');
                     newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
-                    book.read = true;
+                    myLibrary[i].read = true;
                     readDivBtn.textContent = 'Read';
+                    resetLibDisplayed();
+                    displayBooks();
                 }
             }
         );
