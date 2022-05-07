@@ -101,6 +101,19 @@
     background-color: rgb(206, 57, 20);
 }
 
+.removeDivBtn{
+    padding-left:10%;
+    padding-right:10%;
+    margin-left:10%;
+    margin-top:10%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(223, 222, 222);
+}
+
 
 /* MODAL */
 .modal {

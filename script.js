@@ -69,10 +69,12 @@ function displayBooks() {
         let newAuthorDiv = document.createElement('div');
         let newPagesDiv = document.createElement('div');
         let newReadDiv = document.createElement('button');
+        let newRemoveDiv = document.createElement('button');
 
         // Create bookDiv
         library.appendChild(newBookDiv);
         newBookDiv.className = 'bookDiv';
+        newBookDiv.setAttribute('id', i);
 
             // Add titleDiv in bookDiv 
             newBookDiv.appendChild(newTitleDiv);
@@ -93,38 +95,48 @@ function displayBooks() {
             newBookDiv.appendChild(newReadDiv);
             newReadDiv.classList.add('readDivBtn');
 
-            // Update readBtn value
-            let readDivBtn = document.querySelector('.readDivBtn');
-            if (myLibrary[i].read === true) {
-                newReadDiv.textContent = 'Read';
-                newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
-              } else {
-                newReadDiv.textContent = 'Not read';
-                newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
-            }
-
-            // Change Read status when clicked
-              newReadDiv.addEventListener('click', event => {
-                if (newReadDiv.classList.contains('trueReadBtn')) {
-                    newReadDiv.classList.remove('trueReadBtn', 'readDivBtn');
-                    newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
-                    myLibrary[i].read = false;
-                    readDivBtn.textContent = 'Not read';
-                    resetLibDisplayed();
-                    displayBooks();
-                } else {
-                    newReadDiv.classList.remove('falseReadBtn', 'readDivBtn');
+                // Update readBtn value
+                let readDivBtn = document.querySelector('.readDivBtn');
+                if (myLibrary[i].read === true) {
+                    newReadDiv.textContent = 'Read';
                     newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
-                    myLibrary[i].read = true;
-                    readDivBtn.textContent = 'Read';
-                    resetLibDisplayed();
-                    displayBooks();
+                    } else {
+                    newReadDiv.textContent = 'Not read';
+                    newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
                 }
-            }
-        );
+
+                // Change Read status when clicked
+                    newReadDiv.addEventListener('click', event => {
+                    if (newReadDiv.classList.contains('trueReadBtn')) {
+                        newReadDiv.classList.remove('trueReadBtn', 'readDivBtn');
+                        newReadDiv.classList.add('falseReadBtn', 'readDivBtn');
+                        myLibrary[i].read = false;
+                        readDivBtn.textContent = 'Not read';
+                        resetLibDisplayed();
+                        displayBooks();
+                    } else {
+                        newReadDiv.classList.remove('falseReadBtn', 'readDivBtn');
+                        newReadDiv.classList.add('trueReadBtn', 'readDivBtn');
+                        myLibrary[i].read = true;
+                        readDivBtn.textContent = 'Read';
+                        resetLibDisplayed();
+                        displayBooks();
+                    }
+                    });
+
+            // Add removeDiv in bookDiv 
+            newBookDiv.appendChild(newRemoveDiv);
+            newRemoveDiv.classList.add('removeDivBtn');
+            newRemoveDiv.textContent = 'Remove Book';
+            newRemoveDiv.addEventListener('click', event => {
+                myLibrary.splice(myLibrary.indexOf(item),1);
+                resetLibDisplayed();
+                displayBooks();
+            });
+
+        
     }
 };
-
 
 // Show/Hide modal to add new Book
 function showModal() {
