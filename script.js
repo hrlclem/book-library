@@ -19,10 +19,10 @@ displayBooks();
 
 // Create book function
 function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
 };
 
 
