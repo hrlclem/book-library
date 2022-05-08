@@ -12,7 +12,14 @@ let myLibrary =   [ {title: "Harry Potter and the Philosopher’s Stone", author
                     {title: "The Hobbit", author: "J.R.R. Tolkien", pages: 310, read: true}, 
                     {title: "Les Misérables", author: "Victor Hugo", pages: 1232, read: false},
                     {title: "The Adventures of Huckleberry Finn", author: "Mark Twain", pages: 303, read: true}, 
-                    {title: "A la recherche du temps perdu", author: "Marcel Proust", pages: 2400, read: false}];
+                    {title: "A la recherche du temps perdu", author: "Marcel Proust", pages: 2400, read: false},{title: "Harry Potter and the Philosopher’s Stone", author: "J.K. Rowling", pages: 223, read: true}, 
+                    {title: "The Lord of the Rings", author: "J.R.R. Tolkien", pages: 1178, read: false},
+                    {title: "The Great Gatsby", author: "F. Scott Fitzgerald", pages: 208, read: false}, 
+                    {title: "The Alchemist", author: "Paulo Coehlo", pages: 163, read: true},
+                    {title: "The Hobbit", author: "J.R.R. Tolkien", pages: 310, read: true}, 
+                    {title: "Les Misérables", author: "Victor Hugo", pages: 1232, read: false},
+                    {title: "The Adventures of Huckleberry Finn", author: "Mark Twain", pages: 303, read: true}, 
+                    {title: "A la recherche du temps perdu", author: "Marcel Proust", pages: 2400, read: false}, ];
 
 let newBook;
 displayBooks();
