@@ -5,9 +5,9 @@ const div =             document.createElement('div');
 
 
 // List of books
-let myLibrary =   [ {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
-                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: false},
-                    {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: false}, 
+let myLibrary =   [ {title: "Harry Potter 1", author: "JK Rowling", pages: 859, read: true}, 
+                    {title: "Harry Potter 2", author: "JK Rowling", pages: 230, read: false},
+                    {title: "Harry Potter 3", author: "JK Rowling", pages: 230, read: false}, 
                     {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: true},
                     {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
                     {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: false},
