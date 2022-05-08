@@ -5,14 +5,14 @@ const div =             document.createElement('div');
 
 
 // List of books
-let myLibrary =   [ {title: "Harry Potter 1", author: "JK Rowling", pages: 859, read: true}, 
-                    {title: "Harry Potter 2", author: "JK Rowling", pages: 230, read: false},
-                    {title: "Harry Potter 3", author: "JK Rowling", pages: 230, read: false}, 
-                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: true},
-                    {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
-                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: false},
-                    {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
-                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: false}];
+let myLibrary =   [ {title: "Harry Potter and the Philosopher’s Stone", author: "J.K. Rowling", pages: 223, read: true}, 
+                    {title: "The Lord of the Rings", author: "J.R.R. Tolkien", pages: 1178, read: false},
+                    {title: "The Great Gatsby", author: "F. Scott Fitzgerald", pages: 208, read: false}, 
+                    {title: "The Alchemist", author: "Paulo Coehlo", pages: 163, read: true},
+                    {title: "The Hobbit", author: "J.R.R. Tolkien", pages: 310, read: true}, 
+                    {title: "Les Misérables", author: "Victor Hugo", pages: 1232, read: false},
+                    {title: "The Adventures of Huckleberry Finn", author: "Mark Twain", pages: 303, read: true}, 
+                    {title: "A la recherche du temps perdu", author: "Marcel Proust", pages: 2400, read: false}];
 
 let newBook;
 displayBooks();
@@ -44,6 +44,7 @@ function submitBook() {
     {
         addBookToLib();
         formReset();
+        showHideError();
         modal.style.display = "none";
         errorMessage.style.display = "none";
     }
@@ -161,6 +162,18 @@ function displayBooks() {
 function showModal() {
     if (modal.style.display == "block") {
         modal.style.display = "none";
+    } 
+    else 
+    {
+        modal.style.display = "block";
+    }
+};
+
+// Cancel modal to add new Book
+function cancelModal() {
+    if (modal.style.display == "block") {
+        modal.style.display = "none";
+        errorMessage.style.display = "none";
     } 
     else 
     {
