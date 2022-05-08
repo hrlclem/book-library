@@ -114,6 +114,13 @@ body{
 	background-color:#5cbf2a;
     width: 95%;
 }
+.trueReadBtn:hover {
+	background-color:#4a9c21;
+}
+.trueReadBtn:active {
+	position:relative;
+	top:1px;
+}
 
 .falseReadBtn{
     padding-left:10%;
@@ -127,6 +134,14 @@ body{
     background-color:#e23019;
     width: 95%;
 }
+.falseReadBtn:hover {
+    background-color:#c22915;
+}
+.falseReadBtn:active {
+	position:relative;
+	top:1px;
+}
+
 
 .removeDivBtn{
     padding-left:10%;
@@ -141,6 +156,14 @@ body{
     width: 95%;
     font-weight: bold;
 }
+.removeDivBtn:hover {
+    background-color:#afb1b3;
+}
+.removeDivBtn:active {
+	position:relative;
+	top:1px;
+}
+
 
 
 /* MODAL */
