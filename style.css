@@ -48,6 +48,7 @@ body{
 	padding:10px 28px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.33);
 }
 .addBookBtn:hover {
 	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
@@ -236,7 +237,12 @@ body{
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 0.4em;
-    background-color: rgb(229, 235, 229);
+    background-color: rgb(166, 167, 166);
+    border-radius: 100%;
+    border: 0;
+}
+.exitBtn:hover{
+    background-color: rgb(200, 201, 200);
 }
 
 .errorMessage{
