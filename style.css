@@ -111,11 +111,11 @@ body{
     font-size: 1em;
     border-radius: 5px;
     border: 0;
-	background-color:#5cbf2a;
+	background-color:#5ed621;
     width: 95%;
 }
 .trueReadBtn:hover {
-	background-color:#4a9c21;
+	background-color:#4fb81b;
 }
 .trueReadBtn:active {
 	position:relative;
@@ -131,11 +131,11 @@ body{
     border-radius: 5px;
     border: 0;
     color:white;
-    background-color:#e23019;
+    background-color:#f1260b;
     width: 95%;
 }
 .falseReadBtn:hover {
-    background-color:#c22915;
+    background-color:#d4210a;
 }
 .falseReadBtn:active {
 	position:relative;
@@ -157,7 +157,7 @@ body{
     font-weight: bold;
 }
 .removeDivBtn:hover {
-    background-color:#afb1b3;
+    background-color:#cfd1d3;
 }
 .removeDivBtn:active {
 	position:relative;
