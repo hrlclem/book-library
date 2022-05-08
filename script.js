@@ -6,7 +6,13 @@ const div =             document.createElement('div');
 
 // List of books
 let myLibrary =   [ {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
-                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: true}];
+                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: false},
+                    {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: false}, 
+                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: true},
+                    {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
+                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: false},
+                    {title: "The Alchemist 1", author: "Paulo Coehlo", pages: 230, read: true}, 
+                    {title: "The Alchemist 2", author: "Paulo Coehlo", pages: 230, read: false}];
 
 let newBook;
 displayBooks();
@@ -27,11 +33,15 @@ function submitBook() {
         document.getElementById('pagesInput').value == '') {
             if (errorMessage.style.display == "block") {
                 return;
-            } else {
+            } 
+            else 
+            {
                 showHideError();
                 return;
             }
-    } else {
+    } 
+    else 
+    {
         addBookToLib();
         formReset();
         modal.style.display = "none";
@@ -177,24 +187,3 @@ function formReset(){
     document.getElementById('pagesInput').value = '';
     document.getElementById('readInput').checked = false;
 };
-
-
-
-
-//PSEUDOCODE
-// DISPLAY EXISTING BOOKS
-// Go through MyLibrary----
-// For each book, display it in grid with:----
-//      Title
-//      Author
-//      Nbr of pages
-//      Read TRUE or FALSE (with button to change)
-//      Button to delete Book. If clicked, Booked is deleted and DISPLAY EXISTING BOOKS runs
-
-// When AddBook btn is clicked, modal appears---
-// Each field fills the BookConstructor----
-
-// When Submit is clicked, all BookConstructor data is pushed to MyLibrary----
-// Run DISPLAY EXISTING BOOKS----
-//
-// MAKE IT BEAUTIFUL
