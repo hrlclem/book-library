@@ -192,7 +192,7 @@ body{
     text-align: center;
     font-family: arial;
     color: #212121;
-    background-color: rgb(240, 238, 238);
+    background-color: rgb(241, 240, 240);
     margin-left: auto;
     margin-top:170px;
     margin-right: auto;
@@ -255,8 +255,8 @@ body{
     display: none;
     justify-items: center;
     text-align: center;
-    font-size: 10px;
-    color: red;
+    font-size: 12px;
+    color: rgb(235, 5, 5);
     font-weight: lighter;
 }
 
