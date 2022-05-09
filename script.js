@@ -189,14 +189,14 @@ function showHideError(){
     else 
     {
         errorMessage.style.display = "block";
-    }
+    } 
 };
 
 
 // Reset form
 function formReset(){
     document.getElementById('titleInput').value = '';
-    document.getElementById('authorInput').value = '';
+    document.getElementById('authorInput').value = '.';
     document.getElementById('pagesInput').value = '';
     document.getElementById('readInput').checked = false;
 };
