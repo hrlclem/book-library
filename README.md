@@ -1,6 +1,6 @@
 # book-library
 ## Introduction
-📚 This project is a Book Library to master Objects in JS, it follows The Odin Project Cursus. It was required to use constructors, despite knowing what it could cause in some cases.
+📚 Book Libraryis a new project from The Odin Project cursus. The goal is to master Objects in JS: it was required to use constructors, despite knowing what it could cause in some cases.
 \
 \
 ![](https://github.com/hrlclem/book-library/blob/main/book-library.gif)
